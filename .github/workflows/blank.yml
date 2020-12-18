@@ -51,4 +51,4 @@ jobs:
           committer: David Aieta <cdaieta@gmail.com>
           author: David Aieta <cdaieta@gmail.com>
         env:
-          GITHUB_TOKEN: ${{ secrets.PASSWORD }}
+          GH_PAT: ${{ secrets.PASSWORD }}
