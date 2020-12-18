@@ -43,13 +43,22 @@ jobs:
       #     token: ${{ secrets.PASSWORD }}
       #     repo: cdaieta/demo-gh-pages
 
-      - uses: crazy-max/ghaction-github-pages@v2
+      # - uses: crazy-max/ghaction-github-pages@v2
+      #   with:
+      #     repo: cdaieta/demo-gh-pages
+      #     target_branch: gh-pages
+      #     build_dir: pages
+      #     committer: David Aieta <cdaieta@gmail.com>
+      #     author: David Aieta <cdaieta@gmail.com>
+      #   env:
+      #     GH_PAT: ${{ secrets.PASSWORD }}
+      #     GITHUB_TOKEN: ${{ secrets.PASSWORD }}
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          repo: cdaieta/demo-gh-pages
-          target_branch: gh-pages
-          build_dir: pages
-          committer: David Aieta <cdaieta@gmail.com>
-          author: David Aieta <cdaieta@gmail.com>
-        env:
-          GH_PAT: ${{ secrets.PASSWORD }}
-          GITHUB_TOKEN: ${{ secrets.PASSWORD }}
+          personal_token: ${{ secrets.PASSWORD }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: cdaieta/demo-gh-pages
+          publish_branch: gh-pages  # default: gh-pages
+          publish_dir: ./public
