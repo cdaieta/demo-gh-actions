@@ -52,3 +52,4 @@ jobs:
           author: David Aieta <cdaieta@gmail.com>
         env:
           GH_PAT: ${{ secrets.PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.PASSWORD }}
