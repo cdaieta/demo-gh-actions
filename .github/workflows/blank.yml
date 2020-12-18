@@ -48,5 +48,7 @@ jobs:
           repo: cdaieta/demo-gh-pages
           target_branch: gh-pages
           build_dir: pages
+          comitter: David Aieta <cdaieta@gmail.com>
+          author: David Aieta <cdaieta@gmail.com>
         env:
           GITHUB_TOKEN: ${{ secrets.PASSWORD }}
