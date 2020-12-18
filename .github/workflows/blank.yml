@@ -41,6 +41,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           remote_url: https://github.com/cdaieta/demo-gh-pages.git
-          pages_directory: pages
+          pages_directory: ../../pages
           target_directory: pages
           target_branch: gh-pages
