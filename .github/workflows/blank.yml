@@ -35,10 +35,18 @@ jobs:
       #     target_directory: pages
       #     target_branch: gh-pages
 
-      - name: Publish generated content to GitHub Pages
-        uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
+      # - name: Publish generated content to GitHub Pages
+      #   uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
+      #   with:
+      #     dir: ../../pages
+      #     branch: gh-pages
+      #     token: ${{ secrets.PASSWORD }}
+      #     repo: cdaieta/demo-gh-pages
+
+      - uses: crazy-max/ghaction-github-pages@v2
         with:
-          dir: ../../pages
-          branch: gh-pages
-          token: ${{ secrets.PASSWORD }}
           repo: cdaieta/demo-gh-pages
+          target_branch: gh-pages
+          build_dir: pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.PASSWORD }}
