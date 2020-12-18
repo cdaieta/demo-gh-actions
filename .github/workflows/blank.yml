@@ -35,9 +35,12 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      # - name: deploy docs
-      #   uses: ./
-      #   with:
-      #     username: ${{ secrets.USERNAME }}
-      #     password: ${{ secrets.PASSWORD }}
-      #     remote_url: https://github.com/appleboy/gh-pages-action.git
+      - name: deploy docs
+        uses: ./
+        with:
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          remote_url: https://github.com/cdaieta/demo-gh-pages/tree/gh-pages
+          pages_directory: pages
+          target_directory: pages
+          target_branch: gh-pages
