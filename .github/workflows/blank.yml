@@ -61,4 +61,4 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: cdaieta/demo-gh-pages
           publish_branch: gh-pages  # default: gh-pages 
-          publish_dir: ./public
+          publish_dir: pages
