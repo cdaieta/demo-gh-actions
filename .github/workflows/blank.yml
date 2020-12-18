@@ -25,12 +25,20 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: deploy docs
-        uses: ./
+      # - name: deploy docs
+      #   uses: ./
+      #   with:
+      #     username: ${{ secrets.USERNAME }}
+      #     password: ${{ secrets.PASSWORD }}
+      #     remote_url: https://github.com/cdaieta/demo-gh-pages.git
+      #     pages_directory: ../../pages
+      #     target_directory: pages
+      #     target_branch: gh-pages
+
+      - name: Publish generated content to GitHub Pages
+        uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
         with:
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          remote_url: https://github.com/cdaieta/demo-gh-pages.git
-          pages_directory: ../../pages
-          target_directory: pages
-          target_branch: gh-pages
+          dir: ../../pages
+          branch: gh-pages
+          token: ${{ secrets.PASSWORD }}
+          repo: cdaieta/demo-gh-pages
