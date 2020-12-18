@@ -25,35 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # - name: deploy docs
-      #   uses: ./
-      #   with:
-      #     username: ${{ secrets.USERNAME }}
-      #     password: ${{ secrets.PASSWORD }}
-      #     remote_url: https://github.com/cdaieta/demo-gh-pages.git
-      #     pages_directory: ../../pages
-      #     target_directory: pages
-      #     target_branch: gh-pages
-
-      # - name: Publish generated content to GitHub Pages
-      #   uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
-      #   with:
-      #     dir: ../../pages
-      #     branch: gh-pages
-      #     token: ${{ secrets.PASSWORD }}
-      #     repo: cdaieta/demo-gh-pages
-
-      # - uses: crazy-max/ghaction-github-pages@v2
-      #   with:
-      #     repo: cdaieta/demo-gh-pages
-      #     target_branch: gh-pages
-      #     build_dir: pages
-      #     committer: David Aieta <cdaieta@gmail.com>
-      #     author: David Aieta <cdaieta@gmail.com>
-      #   env:
-      #     GH_PAT: ${{ secrets.PASSWORD }}
-      #     GITHUB_TOKEN: ${{ secrets.PASSWORD }}
-
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -62,3 +33,4 @@ jobs:
           external_repository: cdaieta/demo-gh-pages
           publish_branch: gh-pages  # default: gh-pages 
           publish_dir: pages
+
